@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.next
+.vscode
+node_modules
+npm-debug*
+yarn-debug*
+yarn-error*
