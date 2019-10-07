@@ -1,23 +1,12 @@
-const Sequelize = require("sequelize")
+const mongoose = require("mongoose")
 
-const env = (process.env.APP_ENV === 'production') ? true : false
+mongoose.connect('mongodb://127.0.0.1:27017/flow-test', {useNewUrlParser: true, useUnifiedTopology: true})
 
-const cursor = (!env)
-    ? new Sequelize("benkay", "benkay", "Benjamin123$", {
-        host: "localhost",
-        dialect: "postgres",
-    })
-    : new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
-        host: process.env.DB_HOST,
-        dialect: "postgres",
-    })
+const cursor = mongoose.connection
 
-cursor.authenticate()
-    .then(() => {
-        console.log("Database connection established successfully")
-    })
-    .catch(e => {
-        console.error("There was an error while connecting to the database: ", e)
-    })
-
-module.exports = cursor
+cursor.on('error', error => {
+    console.error(error)
+})
+cursor.once('open', () => {
+    console.log('Database connection has been established')
+})

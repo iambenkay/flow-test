@@ -1,48 +1,23 @@
-const Sequelize = require('sequelize')
-const sequelize = require('../db/cursor')
-const Assessment = require("./Assessment")
-const Record = require("./Record")
+const mongoose = require('mongoose')
 
-class User extends Sequelize.Model {}
+const Schema = mongoose.Schema
 
-User.init({
-    id: {
-        type: Sequelize.UUID,
-        primaryKey: true,
-        defaultValue: Sequelize.UUIDV4,
-    },
-    firstName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    lastName: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true,
-    },
-    authPassword: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
-    isStaff: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
-    },
-    isSuperUser: {
-        type: Sequelize.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
-    }
-}, {sequelize, tableName: 'users'})
+const RecordSchema = new Schema({
+    testId: {type: Schema.Types.ObjectId, ref: 'Test', required: true},
+    expires: {type: Date, required: true},
+    submitted: {type: Boolean, required: true, default: false},
+    score: Number,
+    passed: Boolean,
+})
 
+const UserSchema = new Schema({
+    firstName: String,
+    lastName: String,
+    email: {type: String, lowercase: true, unique: true},
+    authPassword: String,
+    record: RecordSchema,
+    isStaff: {type: Boolean, required: true, default: false},
+    isSuperUser: {type: Boolean, required: true, default: false},
+})
 
-
-User.hasMany(Assessment)
-User.hasMany(Record)
-
-module.exports = User
+module.exports = mongoose.model('User', UserSchema)
