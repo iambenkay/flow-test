@@ -1,0 +1,383 @@
+{
+    "servistate": "backup",
+    "version": 1,
+    "createdAt": "2019-10-07T18:39:41.468Z",
+    "stores": [
+        {
+            "name": "projects",
+            "data": [
+                {
+                    "name": "flow-test",
+                    "description": "",
+                    "id": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "createdAt": "2019-09-23T05:50:02.931Z",
+                    "modifiedAt": "2019-10-07T18:39:14.779Z",
+                    "settings": {
+                        "requestSortOrder": "name:false",
+                        "testSortOrder": "modifiedAt:true",
+                        "filesExpanded": false
+                    },
+                    "vars": [
+                        {
+                            "name": "host",
+                            "value": "http://localhost:8081"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "requests",
+            "data": [
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "PUT",
+                    "url": "${host}/api/questions/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "postData": {
+                        "type": "raw",
+                        "data": "{\n    \"testId\": \"5d965e3a888d3157e81b9427\",\n    \"questionNo\": 1,\n    \"questionBody\": \"What is the best language in 2019\",\n    \"options\": {\n        \"A\": \"Javascript\",\n        \"B\": \"Python\",\n        \"C\": \"Julia\",\n        \"D\": \"Go\"\n    },\n    \"answer\": \"A\"\n}",
+                        "format": "json",
+                        "autoTypeHeader": false
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Question: update a question",
+                    "createdAt": "2019-09-23T09:57:54.892Z",
+                    "modifiedAt": "2019-10-04T09:46:25.043Z",
+                    "id": "2a07177e-ec42-477d-a3e9-58a1ec6f3ffb"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "PUT",
+                    "url": "${host}/api/records/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "postData": {
+                        "type": "raw",
+                        "data": "{\n    \"testId\": \"5d965e3a888d3157e81b9427\",\n    \"solutions\": {}\n}",
+                        "format": "json",
+                        "autoTypeHeader": false
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Record: submit a record",
+                    "createdAt": "2019-10-03T20:54:51.359Z",
+                    "modifiedAt": "2019-10-04T04:36:13.338Z",
+                    "id": "2c8a8746-721e-49be-abad-32699b6be71c"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "POST",
+                    "url": "${host}/api/auth/login/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "postData": {
+                        "type": "raw",
+                        "data": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"testauthenticationstring\"\n}",
+                        "format": "json",
+                        "autoTypeHeader": false
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "id": "34ec0b95-4ec0-42f2-b268-56a259825532",
+                    "createdAt": "2019-09-25T07:46:56.186Z",
+                    "modifiedAt": "2019-10-03T19:28:25.548Z",
+                    "name": "User: login"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "PUT",
+                    "url": "${host}/api/tests/5d965e3a888d3157e81b9427/unpublish",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        }
+                    ],
+                    "postData": {
+                        "type": "formdata",
+                        "data": []
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Test: unpublish a test",
+                    "createdAt": "2019-09-23T09:57:54.892Z",
+                    "modifiedAt": "2019-10-04T05:38:24.720Z",
+                    "id": "63f3a508-b9cb-4e3f-b964-a3ac1d60a3fa"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "POST",
+                    "url": "${host}/api/tests/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        }
+                    ],
+                    "postData": {
+                        "type": "raw",
+                        "data": "{\n    \"UserId\": \"5d963f427909f1448cb245b0\",\n    \"name\": \"Andela's Test\",\n    \"code\": \"andy911\",\n    \"duration\": 2,\n    \"noOfQuestions\": \"20\",\n    \"passPercent\": \"50\"\n}",
+                        "format": "json",
+                        "autoTypeHeader": false
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Test: create a test",
+                    "createdAt": "2019-09-23T09:57:54.892Z",
+                    "modifiedAt": "2019-10-03T20:41:22.515Z",
+                    "id": "75a3883b-4fde-45f6-8f93-8048e1d574a0"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "PUT",
+                    "url": "${host}/api/tests/5d965e3a888d3157e81b9427/publish",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        }
+                    ],
+                    "postData": {
+                        "type": "formdata",
+                        "data": []
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Test: publish a test",
+                    "createdAt": "2019-09-23T09:57:54.892Z",
+                    "modifiedAt": "2019-10-04T05:36:20.289Z",
+                    "id": "7df2acd4-af9c-4318-bb89-76fb6f81dbeb"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "POST",
+                    "url": "${host}/api/questions/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "postData": {
+                        "type": "raw",
+                        "data": "{\n    \"testId\": \"5d965e3a888d3157e81b9427\",\n    \"questionNo\": 1,\n    \"questionBody\": \"What is the best language in 2019\",\n    \"options\": {\n        \"A\": \"Javascript\",\n        \"B\": \"Python\",\n        \"C\": \"Julia\",\n        \"D\": \"Go\"\n    },\n    \"answer\": \"A\"\n}",
+                        "format": "json",
+                        "autoTypeHeader": false
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Question: create a question",
+                    "createdAt": "2019-09-23T09:57:54.892Z",
+                    "modifiedAt": "2019-10-04T09:46:03.834Z",
+                    "id": "96f7cdb9-04ef-4902-a8de-70fa1e427e84"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "POST",
+                    "url": "${host}/api/records/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        },
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "postData": {
+                        "type": "raw",
+                        "data": "{\n    \"testId\": \"5d965e3a888d3157e81b9427\"\n}",
+                        "format": "json",
+                        "autoTypeHeader": false
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Record: create a record",
+                    "id": "9f96cd2e-549a-471d-91dd-9a7205e52e06",
+                    "createdAt": "2019-10-03T20:54:51.359Z",
+                    "modifiedAt": "2019-10-04T03:33:11.775Z"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "GET",
+                    "url": "${host}/api/tests/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        }
+                    ],
+                    "postData": null,
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Test: get all tests",
+                    "createdAt": "2019-09-23T09:57:54.892Z",
+                    "modifiedAt": "2019-10-04T05:29:50.784Z",
+                    "id": "a88fb423-54ab-4b4f-838a-bfb6e345953c"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "POST",
+                    "url": "${host}/api/users/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "postData": {
+                        "type": "raw",
+                        "data": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"testers\",\n    \"authPassword\": \"testauthenticationstring\",\n    \"email\": \"test@test.com\"\n}",
+                        "format": "json",
+                        "autoTypeHeader": false
+                    },
+                    "assertions": [],
+                    "assignments": [],
+                    "status": 400,
+                    "statusText": "Bad Request",
+                    "result": {
+                        "request": {
+                            "method": "POST",
+                            "url": "http://localhost:3000/users/"
+                        },
+                        "requestHeaders": [
+                            {
+                                "name": "Sec-Fetch-Mode",
+                                "value": "cors"
+                            },
+                            {
+                                "name": "Origin",
+                                "value": "chrome-extension://mmdjghedkfbdhbjhmefbbgjaihmmhkeg"
+                            },
+                            {
+                                "name": "User-Agent",
+                                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
+                            },
+                            {
+                                "name": "Content-Type",
+                                "value": "multipart/form-data; boundary=----WebKitFormBoundary86gpGUENv3Mk25iW"
+                            },
+                            {
+                                "name": "Accept",
+                                "value": "*/*"
+                            },
+                            {
+                                "name": "Sec-Fetch-Site",
+                                "value": "cross-site"
+                            }
+                        ],
+                        "response": {
+                            "status": 400,
+                            "statusText": "Bad Request",
+                            "data": {},
+                            "type": "blob",
+                            "headers": [
+                                {
+                                    "name": "date",
+                                    "value": "Mon, 23 Sep 2019 06:00:41 GMT\r"
+                                },
+                                {
+                                    "name": "etag",
+                                    "value": "W/\"65-6x6IFloOuYfaWLH0TwMzptCyXGE\"\r"
+                                },
+                                {
+                                    "name": "connection",
+                                    "value": "keep-alive\r"
+                                },
+                                {
+                                    "name": "x-powered-by",
+                                    "value": "Express\r"
+                                },
+                                {
+                                    "name": "content-length",
+                                    "value": "101\r"
+                                },
+                                {
+                                    "name": "content-type",
+                                    "value": "application/json; charset=utf-8\r"
+                                }
+                            ],
+                            "details": {
+                                "mimeType": "application/json",
+                                "charset": "utf-8\r",
+                                "json": true,
+                                "xml": false,
+                                "html": false,
+                                "text": true,
+                                "image": false,
+                                "binary": false
+                            },
+                            "time": 133
+                        },
+                        "start": "2019-09-23T06:00:41.596Z"
+                    },
+                    "id": "b9a863ec-d96d-4f5c-b463-0a53c68ab42d",
+                    "createdAt": "2019-09-23T06:58:14.487Z",
+                    "modifiedAt": "2019-10-03T18:38:27.677Z",
+                    "name": "User: create new user"
+                },
+                {
+                    "project": "e76a5ac5-98bc-4ba5-bfdd-f9e17adcd434",
+                    "method": "GET",
+                    "url": "${host}/api/records/",
+                    "followRedirects": true,
+                    "headers": [
+                        {
+                            "name": "Authorization",
+                            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTY1MWFlYmIwY2IwNGI0NmFkZWMxYSIsImlzU3RhZmYiOnRydWUsImlzU3VwZXJVc2VyIjp0cnVlLCJpYXQiOjE1NzAxMzM5NjF9.BBWyu2asE5opt_om79CHQsgUX8eD3-0W0IKBwPmTej0"
+                        }
+                    ],
+                    "postData": null,
+                    "assertions": [],
+                    "assignments": [],
+                    "name": "Record: get record",
+                    "createdAt": "2019-09-23T09:57:54.892Z",
+                    "modifiedAt": "2019-10-07T18:39:14.659Z",
+                    "id": "dacc9373-b6a0-4c91-b702-25f47ee19072"
+                }
+            ]
+        }
+    ]
+}
