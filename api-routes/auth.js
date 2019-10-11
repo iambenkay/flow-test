@@ -21,14 +21,22 @@ router.post("/login", async (req, res) => {
         const payload = {id: user._id, isStaff: user.isStaff, isSuperUser: user.isSuperUser}
         const token = jwt.sign(payload, secret_key)
         res.json({success: "Login successful", token, user: {
+            _id: user._id,
             email: user.email,
             firstName: user.firstName,
-            lastName: user.lastName
+            lastName: user.lastName,
+            isStaff: user.isStaff,
+            isSuperUser: user.isSuperUser,
         }})
     } else res.status(401).json({error: "Password is incorrect"})
 })
-router.get("/roles", isAuthenticated, async (req, res) => {
-    return res.send(req.payload)
+.get("/user", isAuthenticated, async (req, res) => {
+    try {
+        const user = await User.findById(req.payload.id, "firstName lastName email", {lean: true})
+        return res.send({...req.payload, ...user})
+    } catch(e){
+        return res.status(400).send(null)
+    }
 })
 
 module.exports = router
